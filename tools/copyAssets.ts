@@ -1,3 +1,8 @@
-import * as shell from 'shelljs';
+import fse from 'fs-extra';
 
-shell.cp('-R', 'src/emails', 'build/src/');
+// Source and destination directory paths
+const sourceDir: string = 'src/emails_templates';
+const destinationDir: string = 'build/src/';
+
+// Copy the contents of the source directory to the destination directory
+fse.copySync(sourceDir, destinationDir);
